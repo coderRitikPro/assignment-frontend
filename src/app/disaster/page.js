@@ -16,7 +16,7 @@ export default function CreateDisaster() {
 
   const handleDisaster = async (e) => {
     e.preventDefault();
-    const locationData = await fetch(`${constant.host}=${username}&password=${password}`,{
+    const locationData = await fetch(`${constant.host}/?username=${username}&password=${password}`,{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -36,7 +36,7 @@ export default function CreateDisaster() {
     };
 
     try {
-      const res = await fetch(`http://localhost:5000/disasters?username=${username}&password=${password}`, {
+      const res = await fetch(`${constant.host}/disasters?username=${username}&password=${password}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
