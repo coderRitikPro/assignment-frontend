@@ -16,7 +16,7 @@ export default function CreateDisaster() {
 
   const handleDisaster = async (e) => {
     e.preventDefault();
-    const locationData = await fetch(`${constant.host}/?username=${username}&password=${password}`,{
+    const locationData = await fetch(`${constant.host}/geocode?username=${username}&password=${password}`,{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
